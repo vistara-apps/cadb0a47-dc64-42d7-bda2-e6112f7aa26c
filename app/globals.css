@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cyberpunk Gaming Theme */
+  --color-bg: #0a0a0f;
+  --color-fg: #e0e0e0;
+  --color-accent: #00ff41;
+  --color-surface: #1a1a2e;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0b0;
+  
+  /* Additional cyberpunk colors */
+  --color-purple: #6a0dad;
+  --color-cyan: #00ffff;
+  --color-pink: #ff00ff;
+  --color-warning: #ffaa00;
+  --color-danger: #ff0040;
+}
+
+[data-theme="celo"] {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --color-accent: #fbcc5c;
+  --color-surface: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
+}
+
+[data-theme="solana"] {
+  --color-bg: #1a0b2e;
+  --color-fg: #ffffff;
+  --color-accent: #9945ff;
+  --color-surface: #2d1b4e;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #c9a9dd;
+}
+
+[data-theme="base"] {
+  --color-bg: #0052ff;
+  --color-fg: #ffffff;
+  --color-accent: #0052ff;
+  --color-surface: #1a4fff;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e6f0ff;
+}
+
+[data-theme="coinbase"] {
+  --color-bg: #0a1426;
+  --color-fg: #ffffff;
+  --color-accent: #0052ff;
+  --color-surface: #1a2332;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #8fa2b7;
+}
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+  
+  body {
+    @apply bg-bg text-fg font-mono;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(106, 13, 173, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0, 255, 65, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface bg-opacity-20 backdrop-blur-md border border-accent border-opacity-30;
+    box-shadow: 0 8px 32px rgba(0, 255, 65, 0.1);
+  }
+  
+  .neon-border {
+    @apply border border-accent;
+    box-shadow: 
+      0 0 5px var(--color-accent),
+      inset 0 0 5px rgba(0, 255, 65, 0.1);
+  }
+  
+  .cyber-button {
+    @apply bg-gradient-to-r from-purple-600 to-accent text-white px-6 py-3 font-bold uppercase tracking-wider;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-button:hover {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px var(--color-accent);
+    transform: translateY(-2px);
+  }
+  
+  .cyber-input {
+    @apply bg-surface bg-opacity-50 border border-accent border-opacity-50 text-fg px-4 py-3 focus:border-accent focus:outline-none;
+    clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  }
+  
+  .metric-card {
+    @apply glass-card p-6 hover:bg-opacity-30 transition-all duration-300;
+  }
+  
+  .asset-card {
+    @apply glass-card p-4 hover:border-accent hover:shadow-lg transition-all duration-300;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+  }
+  
+  .video-player {
+    @apply relative overflow-hidden neon-border;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px var(--color-accent);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}

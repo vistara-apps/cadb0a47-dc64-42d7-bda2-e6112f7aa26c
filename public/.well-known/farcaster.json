@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "PixelForge",
+    "subtitle": "Built with Zara",
+    "description": "PixelForge is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://cadb0a47dc6442d7bda2e6112f7aa26c-hs8l.vercel.app",
+    "splashImageUrl": "https://cadb0a47dc6442d7bda2e6112f7aa26c-hs8l.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://cadb0a47dc6442d7bda2e6112f7aa26c-hs8l.vercel.app/image.png",
+    "tagline": "PixelForge",
+    "screenshotUrls": [
+      "https://cadb0a47dc6442d7bda2e6112f7aa26c-hs8l.vercel.app/screenshot.png",
+      "https://cadb0a47dc6442d7bda2e6112f7aa26c-hs8l.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://cadb0a47dc6442d7bda2e6112f7aa26c-hs8l.vercel.app/api/webhook"
+  }
+}
